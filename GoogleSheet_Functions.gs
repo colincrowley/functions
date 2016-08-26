@@ -57,9 +57,35 @@ function handleGoToSheetClick(e) {
     app.close();   
     return app; 
 }
+/*****************************************************************************/
 
+
+/******************************************************************************
+**  What:   Creates tool bar option to run scripts
+**
+**  Name:   Colin Crowley
+**
+**  Date:   10-05-2016
+**
+******************************************************************************/
+
+
+
+/******************************************************************************
+ *  Creats menu 'Tasks' where the script Go to sheets can be implemented
+ */
+var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+var ui          = SpreadsheetApp.getUi();
+function onOpen(event) {  
+
+    ui.createMenu('Tasks')
+        .addItem('Run autoFill', 'autoFill')
+        .addItem('Send email', 'emailSpreadsheetAsPDF')
+        .addToUi();
+}
 
 /*****************************************************************************/
+
 
 /******************************************************************************
 **  What:   Creates sheet of template based on row data
